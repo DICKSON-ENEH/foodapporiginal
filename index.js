@@ -11,6 +11,11 @@ mongoose.connect("mongodb+srv://foodapp:today@cluster0.xd5wm.mongodb.net/foodapp
 })
 app.use(cors())
 app.use(express.json()) 
+app.get("/",(req, res)=>{
+res.status(200).json({
+    message:"here we are"
+})
+})
 app.use("/api/user", require("./Routes/userRoute")); 
 app.use("/api/rice", require("./Routes/riceRoute")); 
 app.use("/api/soup", require("./Routes/soupRoute")); 
